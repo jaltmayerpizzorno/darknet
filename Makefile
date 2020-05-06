@@ -4,7 +4,7 @@ CUDNN_HALF=0
 OPENCV=0
 AVX=0
 OPENMP=0
-LIBSO=0
+LIBSO=1
 ZED_CAMERA=0 # ZED SDK 3.0 and above
 ZED_CAMERA_v2_8=0 # ZED SDK 2.X
 
@@ -62,7 +62,7 @@ endif
 
 CPP=g++ -std=c++11
 NVCC=nvcc
-OPTS=-Ofast
+OPTS=-Ofast -fno-unsafe-math-optimizations
 LDFLAGS= -lm -pthread
 COMMON= -Iinclude/ -I3rdparty/stb/include
 CFLAGS=-Wall -Wfatal-errors -Wno-unused-result -Wno-unknown-pragmas -fPIC
